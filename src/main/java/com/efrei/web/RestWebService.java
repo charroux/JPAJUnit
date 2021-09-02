@@ -18,11 +18,10 @@ public class RestWebService {
 		super();
 		this.repository = repository;
 		this.service = service;
-		System.out.println(service);
 	}
 	
 	@GetMapping("/programmeurs")
-	public Iterable<ProgrammeurBean> getCities(){
+	public Iterable<ProgrammeurBean> getProgrammeurs(){
 		return repository.findAll();
 	}
 

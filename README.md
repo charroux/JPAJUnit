@@ -1,4 +1,4 @@
-# JPAExample
+# JPA (In memory) + JUnit
 
 JDK11 compatible
 

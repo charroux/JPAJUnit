@@ -27,8 +27,6 @@ Web Service: http://localhost:8080/programmeurs
 
 The code at the server side is: https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/RestWebService.java
 
-# Test
+# JUnit tests
 
-Open the project into Intellij or Eclipe
-
-Then run the test (file https://github.com/charroux/JPAJUnit/blob/main/src/test/java/com/efrei/ServiceTest.java)
+Run the test file https://github.com/charroux/JPAJUnit/blob/main/src/test/java/com/efrei/ServiceTest.java

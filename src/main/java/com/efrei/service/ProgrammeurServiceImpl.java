@@ -18,6 +18,9 @@ public class ProgrammeurServiceImpl implements ProgrammeurService {
 
     @Override
     public void modifierSalaireProgrammeur(ProgrammeurBean programmeur, Float salaire) throws Exception {
+        if(salaire == null){
+            throw new Exception("Salaire null");
+        }
         programmeur.setSalaire(salaire);
         repository.save(programmeur);
     }

@@ -21,14 +21,29 @@ public class ServiceTest {
 
     @BeforeEach
     public void init(){
-        ProgrammeurBean linus = new ProgrammeurBean("Stroustrup","Bjarne","2 avenue Linux Git","linuxroot","Didier Achvar","Salsa",1969,2170,50);
-        repository.save(linus);
+        ProgrammeurBean stroustrup = new ProgrammeurBean("Stroustrup","Bjarne","2 avenue Linux Git","linuxroot","Didier Achvar","Salsa",1969,2170,50);
+        repository.save(stroustrup);
+        ProgrammeurBean turing = new ProgrammeurBean("Turing","Bjarne","2 avenue Linux Git","linuxroot","Didier Achvar","Salsa",1969,2170,50);
+        repository.save(turing);
     }
 
-    @Test
+   /*@Test
     public void modifierSalaire(){
         ProgrammeurBean programmeur = repository.findByNom("Stroustrup");
         assertNotNull(programmeur);
+       try {
+           service.modifierSalaireProgrammeur(programmeur, (float)12345);
+       } catch (Exception e) {
+           fail("Exception non expected");
+       }
+   }*/
+
+    @Test
+    void exceptionTesting() {
+        ProgrammeurBean programmeur = repository.findByNom("Turing");
+        assertNotNull(programmeur);
+        Exception exception = assertThrows(Exception.class, () -> service.modifierSalaireProgrammeur(programmeur, null));
+        assertEquals("Salaire null", exception.getMessage());
     }
 
 }
